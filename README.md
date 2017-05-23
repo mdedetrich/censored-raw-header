@@ -1,7 +1,8 @@
 ## Censored Raw Header
 
 Censored raw header is a simple implementation of `RawHeader` which allows you to provide
-a custom `.toString` method. This is useful when it comes to censoring log output of headers.
+a custom `.toString` method. This is useful when it comes to censoring log output of headers of
+sensitive information, such as OAuth2 tokens.
 
 ## Usage
 
