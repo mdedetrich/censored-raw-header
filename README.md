@@ -10,7 +10,7 @@ Put this into your `build.sbt`
 
 ```scala
 libraryDependencies ++= Seq(
-  "org.mdedetrich" %% "censored-raw-header" % "0.1.0"
+  "org.mdedetrich" %% "censored-raw-header" % "0.2.0"
 )
 ```
 
