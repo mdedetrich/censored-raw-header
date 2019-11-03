@@ -8,14 +8,11 @@ import akka.http.scaladsl.model.HttpHeader
 /**
   * A special type of RawHeader which allows you to censor the output when [[toString]] is called, useful
   * for headers which express Tokens which you don't want to log for security concerns
-  * @param name
-  * @param value
-  * @param censorValue
+  * @param name The name of the header
+  * @param value The actual value of the header
+  * @param censorValue The censored value to show when doing [[toString]]
   */
-final case class CensoredRawHeader(name: String,
-                                   value: String,
-                                   censorValue: String)
-    extends jm.headers.RawHeader {
+final case class CensoredRawHeader(name: String, value: String, censorValue: String) extends jm.headers.RawHeader {
   def renderInRequests                     = true
   def renderInResponses                    = true
   val lowercaseName: String                = name.toRootLowerCase
