@@ -1,24 +1,14 @@
 name := "censored-raw-header"
 organization := "org.mdedetrich"
 
-val currentScalaVersion = "2.12.10"
+val currentScalaVersion = "2.12.11"
 
 scalaVersion := currentScalaVersion
-crossScalaVersions := Seq("2.11.11", currentScalaVersion, "2.13.1")
+crossScalaVersions := Seq(currentScalaVersion, "2.13.1")
 
-version := "0.4.0"
+version := "0.5.0"
 
-val akkaVersion = "2.5.26"
-
-val flagsFor11 = Seq(
-  "-Xlint:_",
-  "-Yconst-opt",
-  "-Ywarn-infer-any",
-  "-Yclosure-elim",
-  "-Ydead-code",
-  "-optimize",
-  "-Xsource:2.12" // required to build case class construction
-)
+val akkaVersion = "2.6.3"
 
 val flagsFor12 = Seq(
   "-Xlint:_",
@@ -33,7 +23,7 @@ val flagsFor13 = Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.akka" %% "akka-http"   % "10.1.9",
+  "com.typesafe.akka" %% "akka-http"   % "10.1.11",
   "com.typesafe.akka" %% "akka-actor"  % akkaVersion,
   "com.typesafe.akka" %% "akka-stream" % akkaVersion
 )
@@ -44,8 +34,6 @@ scalacOptions ++= {
       flagsFor13
     case Some((2, n)) if n == 12 =>
       flagsFor12
-    case Some((2, n)) if n == 11 =>
-      flagsFor11
   }
 }
 
