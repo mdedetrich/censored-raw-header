@@ -4,11 +4,11 @@ organization := "org.mdedetrich"
 val currentScalaVersion = "2.12.11"
 
 scalaVersion := currentScalaVersion
-crossScalaVersions := Seq(currentScalaVersion, "2.13.1")
+crossScalaVersions := Seq(currentScalaVersion, "2.13.4")
 
-version := "0.5.0"
+version := "0.6.0"
 
-val akkaVersion = "2.6.3"
+val akkaVersion = "2.6.10"
 
 val flagsFor12 = Seq(
   "-Xlint:_",
@@ -23,7 +23,7 @@ val flagsFor13 = Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.akka" %% "akka-http"   % "10.1.11",
+  "com.typesafe.akka" %% "akka-http"   % "10.2.2",
   "com.typesafe.akka" %% "akka-actor"  % akkaVersion,
   "com.typesafe.akka" %% "akka-stream" % akkaVersion
 )
