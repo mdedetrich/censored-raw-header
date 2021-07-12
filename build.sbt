@@ -6,6 +6,10 @@ val currentScalaVersion = "2.12.14"
 ThisBuild / scalaVersion       := currentScalaVersion
 ThisBuild / crossScalaVersions := Seq(currentScalaVersion, "2.13.6")
 
+ThisBuild / githubWorkflowPublishTargetBranches := Seq()
+// This is set to false due to https://github.com/sbt/sbt/issues/6468
+ThisBuild / githubWorkflowUseSbtThinClient := false
+
 val akkaVersion = "2.6.15"
 
 val flagsFor12 = Seq(
@@ -21,7 +25,7 @@ val flagsFor13 = Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.akka" %% "akka-http"   % "10.2.4" % Provided,
+  "com.typesafe.akka" %% "akka-http"   % "10.2.4"    % Provided,
   "com.typesafe.akka" %% "akka-stream" % akkaVersion % Provided
 )
 
