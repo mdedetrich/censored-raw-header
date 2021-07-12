@@ -21,9 +21,8 @@ val flagsFor13 = Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.akka" %% "akka-http"   % "10.2.4",
-  "com.typesafe.akka" %% "akka-actor"  % akkaVersion,
-  "com.typesafe.akka" %% "akka-stream" % akkaVersion
+  "com.typesafe.akka" %% "akka-http"   % "10.2.4" % Provided,
+  "com.typesafe.akka" %% "akka-stream" % akkaVersion % Provided
 )
 
 ThisBuild / scalacOptions ++= {
