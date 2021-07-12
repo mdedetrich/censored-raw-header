@@ -21,7 +21,8 @@ val flagsFor12 = Seq(
 
 val flagsFor13 = Seq(
   "-Xlint:_",
-  "-opt-inline-from:<sources>"
+  "-opt-inline-from:<sources>",
+  "-opt:l:method"
 )
 
 libraryDependencies ++= Seq(
