@@ -1,9 +1,9 @@
-name := "censored-raw-header"
+name         := "censored-raw-header"
 organization := "org.mdedetrich"
 
 val currentScalaVersion = "2.12.11"
 
-scalaVersion := currentScalaVersion
+scalaVersion       := currentScalaVersion
 crossScalaVersions := Seq(currentScalaVersion, "2.13.4")
 
 val akkaVersion = "2.6.10"
@@ -38,8 +38,8 @@ scalacOptions ++= {
 homepage := Some(url("https://github.com/mdedetrich/censored-raw-header"))
 
 scmInfo := Some(
-  ScmInfo(url("https://github.com/mdedetrich/censored-raw-header"),
-          "git@github.com:mdedetrich/censored-raw-header.git"))
+  ScmInfo(url("https://github.com/mdedetrich/censored-raw-header"), "git@github.com:mdedetrich/censored-raw-header.git")
+)
 
 developers := List(
   Developer("mdedetrich", "Matthew de Detrich", "mdedetrich@gmail.com", url("https://github.com/mdedetrich"))

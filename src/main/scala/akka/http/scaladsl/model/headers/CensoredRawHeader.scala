@@ -5,8 +5,7 @@ import akka.http.impl.util.{Rendering, _}
 import akka.http.javadsl.{model => jm}
 import akka.http.scaladsl.model.HttpHeader
 
-/**
-  * A special type of RawHeader which allows you to censor the output when [[toString]] is called, useful
+/** A special type of RawHeader which allows you to censor the output when [[toString]] is called, useful
   * for headers which express Tokens which you don't want to log for security concerns
   * @param name The name of the header
   * @param value The actual value of the header
