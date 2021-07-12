@@ -1,10 +1,10 @@
-name         := "censored-raw-header"
-organization := "org.mdedetrich"
+name                     := "censored-raw-header"
+ThisBuild / organization := "org.mdedetrich"
 
 val currentScalaVersion = "2.12.11"
 
-scalaVersion       := currentScalaVersion
-crossScalaVersions := Seq(currentScalaVersion, "2.13.4")
+ThisBuild / scalaVersion       := currentScalaVersion
+ThisBuild / crossScalaVersions := Seq(currentScalaVersion, "2.13.4")
 
 val akkaVersion = "2.6.10"
 
@@ -26,7 +26,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-stream" % akkaVersion
 )
 
-scalacOptions ++= {
+ThisBuild / scalacOptions ++= {
   CrossVersion.partialVersion(scalaVersion.value) match {
     case Some((2, n)) if n == 13 =>
       flagsFor13
@@ -35,17 +35,17 @@ scalacOptions ++= {
   }
 }
 
-homepage := Some(url("https://github.com/mdedetrich/censored-raw-header"))
+ThisBuild / homepage := Some(url("https://github.com/mdedetrich/censored-raw-header"))
 
-scmInfo := Some(
+ThisBuild / scmInfo := Some(
   ScmInfo(url("https://github.com/mdedetrich/censored-raw-header"), "git@github.com:mdedetrich/censored-raw-header.git")
 )
 
-developers := List(
+ThisBuild / developers := List(
   Developer("mdedetrich", "Matthew de Detrich", "mdedetrich@gmail.com", url("https://github.com/mdedetrich"))
 )
 
-licenses += ("BSD 3 Clause", url("https://opensource.org/licenses/BSD-3-Clause"))
+ThisBuild / licenses += ("BSD 3 Clause", url("https://opensource.org/licenses/BSD-3-Clause"))
 
 publishMavenStyle := true
 
@@ -57,6 +57,6 @@ publishTo := {
     Some("releases" at nexus + "service/local/staging/deploy/maven2")
 }
 
-publishArtifact in Test := false
+Test / publishArtifact := false
 
 pomIncludeRepository := (_ => false)
