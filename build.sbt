@@ -1,12 +1,12 @@
 name                     := "censored-raw-header"
 ThisBuild / organization := "org.mdedetrich"
 
-val currentScalaVersion = "2.12.11"
+val currentScalaVersion = "2.12.14"
 
 ThisBuild / scalaVersion       := currentScalaVersion
-ThisBuild / crossScalaVersions := Seq(currentScalaVersion, "2.13.4")
+ThisBuild / crossScalaVersions := Seq(currentScalaVersion, "2.13.6")
 
-val akkaVersion = "2.6.10"
+val akkaVersion = "2.6.15"
 
 val flagsFor12 = Seq(
   "-Xlint:_",
@@ -21,7 +21,7 @@ val flagsFor13 = Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.akka" %% "akka-http"   % "10.2.2",
+  "com.typesafe.akka" %% "akka-http"   % "10.2.4",
   "com.typesafe.akka" %% "akka-actor"  % akkaVersion,
   "com.typesafe.akka" %% "akka-stream" % akkaVersion
 )
