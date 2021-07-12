@@ -6,8 +6,6 @@ val currentScalaVersion = "2.12.11"
 scalaVersion := currentScalaVersion
 crossScalaVersions := Seq(currentScalaVersion, "2.13.4")
 
-version := "0.6.0"
-
 val akkaVersion = "2.6.10"
 
 val flagsFor12 = Seq(
