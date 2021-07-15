@@ -52,16 +52,25 @@ ThisBuild / developers := List(
 
 ThisBuild / licenses += ("BSD 3 Clause", url("https://opensource.org/licenses/BSD-3-Clause"))
 
-publishMavenStyle := true
-
-publishTo := {
-  val nexus = "https://oss.sonatype.org/"
-  if (isSnapshot.value)
-    Some("snapshots" at nexus + "content/repositories/snapshots")
-  else
-    Some("releases" at nexus + "service/local/staging/deploy/maven2")
-}
-
+publishMavenStyle      := true
+publishTo              := sonatypePublishTo.value
 Test / publishArtifact := false
+pomIncludeRepository   := (_ => false)
 
-pomIncludeRepository := (_ => false)
+import ReleaseTransformations._
+
+releaseCrossBuild := true
+releaseProcess := Seq[ReleaseStep](
+  checkSnapshotDependencies,
+  inquireVersions,
+  runClean,
+  runTest,
+  setReleaseVersion,
+  commitReleaseVersion,
+  tagRelease,
+  releaseStepCommandAndRemaining("+publishSigned"),
+  releaseStepCommand("sonatypeReleaseAll"),
+  setNextVersion,
+  commitNextVersion,
+  pushChanges
+)
