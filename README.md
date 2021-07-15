@@ -1,3 +1,7 @@
+[![Build Status](https://img.shields.io/github/workflow/status/mdedetrich/censored-raw-header/Continuous%20Integration.svg)](https://github.com/mdedetrich/censored-raw-header/actions)
+[![Latest version](https://index.scala-lang.org/mdedetrich/censored-raw-header/censored-raw-header/latest.svg?color=orange)](https://index.scala-lang.org/mdedetrich/censored-raw-header)
+[![BSD License](https://img.shields.io/badge/license-BSD-green.svg)](https://opensource.org/licenses/BSD-2-Clause)
+
 ## Censored Raw Header
 
 Censored raw header is a simple implementation of `RawHeader` which allows you to provide
