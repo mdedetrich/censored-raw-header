@@ -5,6 +5,7 @@ val currentScalaVersion = "2.12.14"
 
 ThisBuild / crossScalaVersions := Seq(currentScalaVersion, "2.13.6")
 ThisBuild / scalaVersion       := (ThisBuild / crossScalaVersions).value.last
+ThisBuild / versionScheme      := Some(VersionScheme.EarlySemVer)
 
 ThisBuild / githubWorkflowPublishTargetBranches := Seq()
 // This is set to false due to https://github.com/sbt/sbt/issues/6468
